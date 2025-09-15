@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivicIssue Reporter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="codex.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="overlay">
+        <header>
+          <div class="app-title">
+            <i class="fas fa-city"></i>
+            <h1>CivicKart</h1>
+            <div style="width: 150px"></div>
+            <div class="logo"><img src="codex.png" alt="codex" /></div>
+          </div>
+        </header>
+
+        <div class="nav-tabs">
+          <div class="tab active" data-view="report">Report</div>
+          <div class="tab" data-view="track">Track</div>
+          <div class="tab" data-view="map">Map</div>
+          <div class="tab" data-view="profile">Profile</div>
+        </div>
+      </div>
+
+      <div class="main">
+        <!-- Report View -->
+        <div id="reportView" class="view active">
+          <div class="card">
+            <h2 class="card-title">Report an Issue</h2>
+
+            <div class="form-group">
+              <label for="issuePhoto">Add Photo</label>
+              <button class="btn camera-btn">
+                <i class="fas fa-camera"></i> Take Photo
+              </button>
+            </div>
+
+            <div class="form-group">
+              <label for="issueCategory">Category</label>
+              <select id="issueCategory">
+                <option value="">Select a category</option>
+                <option value="road">Road Damage</option>
+                <option value="garbage">Garbage Accumulation</option>
+                <option value="water">Water Supply Issue</option>
+                <option value="light">Street Light Problem</option>
+                <option value="other">Other Issue</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="issueDescription">Description</label>
+              <textarea
+                id="issueDescription"
+                placeholder="Describe the issue in detail..."
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Location</label>
+              <div class="location-display">
+                <i class="fas fa-map-marker-alt"></i>
+                <span id="locationText">Getting your location...</span>
+              </div>
+            </div>
+
+            <button class="btn" id="submitIssue">Submit Report</button>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title">Recent Issues Near You</h2>
+
+            <div class="issue-card card">
+              <div class="issue-title">
+                <span>Pothole on Main Street</span>
+                <span class="status-badge status-progress">In Progress</span>
+              </div>
+              <p>Large pothole causing traffic issues</p>
+              <span class="issue-category">Road Damage</span>
+            </div>
+
+            <div class="issue-card card">
+              <div class="issue-title">
+                <span>Garbage Not Collected</span>
+                <span class="status-badge status-acknowledged"
+                  >Acknowledged</span
+                >
+              </div>
+              <p>Garbage hasn't been collected for 3 days</p>
+              <span class="issue-category">Garbage Accumulation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track View -->
+        <div id="trackView" class="view">
+          <div class="card">
+            <h2 class="card-title">Your Reported Issues</h2>
+
+            <div class="issue-card card">
+              <div class="issue-title">
+                <span>Broken Street Light</span>
+                <span class="status-badge status-resolved">Resolved</span>
+              </div>
+              <p>Light pole #42 not working for 2 weeks</p>
+              <span class="issue-category">Street Light Problem</span>
+            </div>
+
+            <div class="issue-card card">
+              <div class="issue-title">
+                <span>Water Leakage</span>
+                <span class="status-badge status-progress">In Progress</span>
+              </div>
+              <p>Water leaking from main road pipe</p>
+              <span class="issue-category">Water Supply Issue</span>
+            </div>
+
+            <div class="issue-card card">
+              <div class="issue-title">
+                <span>Park Maintenance</span>
+                <span class="status-badge status-submitted">Submitted</span>
+              </div>
+              <p>Central park needs cleaning and maintenance</p>
+              <span class="issue-category">Other Issue</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title">Notifications</h2>
+
+            <div class="notification">
+              <div class="notification-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div>
+                <p>Your report #456 has been resolved</p>
+                <small>2 hours ago</small>
+              </div>
+            </div>
+
+            <div class="notification">
+              <div class="notification-icon">
+                <i class="fas fa-tasks"></i>
+              </div>
+              <div>
+                <p>Your report #789 is now in progress</p>
+                <small>1 day ago</small>
+              </div>
+            </div>
+
+            <div class="notification">
+              <div class="notification-icon">
+                <i class="fas fa-bell"></i>
+              </div>
+              <div>
+                <p>We've received your report #890</p>
+                <small>2 days ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map View -->
+        <div id="mapView" class="view">
+          <div class="card">
+            <h2 class="card-title">Issues Map</h2>
+            <p>See all reported issues in your city</p>
+
+            <div class="map-container">
+              <i class="fas fa-map-marked-alt" style="font-size: 3rem"></i>
+              <p>Interactive Map Loading...</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title">Legend</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px">
+              <div style="display: flex; align-items: center">
+                <div class="issue-marker" style="background: #e74c3c"></div>
+                <span style="margin-left: 5px">Critical</span>
+              </div>
+              <div style="display: flex; align-items: center">
+                <div class="issue-marker" style="background: #f39c12"></div>
+                <span style="margin-left: 5px">In Progress</span>
+              </div>
+              <div style="display: flex; align-items: center">
+                <div class="issue-marker" style="background: #27ae60"></div>
+                <span style="margin-left: 5px">Resolved</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile View -->
+        <div id="profileView" class="view">
+          <div class="card">
+            <div class="user-info">
+              <div class="user-avatar">JD</div>
+              <div>
+                <h3>Avaas sahu</h3>
+                <p>avaas_sahu@example.com</p>
+              </div>
+            </div>
+
+            <div
+              class="stats"
+              style="
+                display: flex;
+                justify-content: space-around;
+                text-align: center;
+                margin: 20px 0;
+              "
+            >
+              <div>
+                <h3>12</h3>
+                <p>Reports</p>
+              </div>
+              <div>
+                <h3>8</h3>
+                <p>Resolved</p>
+              </div>
+              <div>
+                <h3>4</h3>
+                <p>In Progress</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h2 class="card-title">Settings</h2>
+            <div class="form-group">
+              <label>Notification Preferences</label>
+              <select>
+                <option>Push Notifications</option>
+                <option>Email Notifications</option>
+                <option>Both</option>
+                <option>None</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Language</label>
+              <select>
+                <option>English</option>
+                <option>hindi</option>
+                <option>odia</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="codex.js"></script>
+  </body>
+</html>

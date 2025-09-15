@@ -1,0 +1,344 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #f5f7fa;
+  background-repeat: repeat;      /* Repeats the image */
+  background-size: auto;          /* Keeps original image size */
+  background-position: top left;  /* Start tiling from top-left */
+  color: #333;
+  line-height: 1.6;
+  padding: 0;   /* remove extra padding */
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;   /* always fit full screen height */
+  border: 3px solid;
+  border-color: rgb(60, 60, 60) rgb(120, 120, 120) rgb(180, 180, 180) rgb(120, 120, 120);
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.overlay {
+  position: relative;
+  z-index: 10;
+}
+
+header {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space between title and logo */
+  background: linear-gradient(135deg, #2c3e50, #4a6491);
+  color: white;
+  padding: 15px;
+  max-height: 80px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between icon and text */
+}
+
+.app-title h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  border-radius: 5px;
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-title h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.app-title i {
+  font-size: 1.8rem;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  border-radius: 50px;
+  padding: 5px;
+  margin: 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  flex: 1;
+}
+
+.tab.active {
+  background: #4a6491;
+  color: white;
+}
+
+.main {
+  flex: 1;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 0 15px 15px 15px;
+  scrollbar-width: none;
+}
+
+.main::-webkit-scrollbar {
+  display: none;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.btn {
+  background: #4a6491;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #3a5379;
+}
+
+.camera-btn {
+  background: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.location-display {
+  background: #f0f4f8;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.location-display i {
+  color: #4a6491;
+  margin-right: 5px;
+}
+
+.issue-card {
+  border-left: 4px solid #4a6491;
+  margin-bottom: 15px;
+}
+
+.issue-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.issue-category {
+  background: #e4e9f2;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.status-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-submitted {
+  background: #ffe9c9;
+  color: #ce8c00;
+}
+
+.status-acknowledged {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.status-progress {
+  background: #d1e7ff;
+  color: #004085;
+}
+
+.status-resolved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.map-container {
+  height: 300px;
+  background: #e4e9f2;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+.issue-marker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e74c3c;
+  border: 2px solid white;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.5);
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4a6491;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.notification-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e4e9f2;
+  color: #4a6491;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.login-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-google {
+  background: #db4437;
+}
+
+.btn-facebook {
+  background: #4267b2;
+}
+
+.btn-otp {
+  background: #2c3e50;
+}
+
+.anonymous-option {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.anonymous-option a {
+  color: #4a6491;
+  text-decoration: none;
+}

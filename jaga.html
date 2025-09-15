@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Issue Reporting System - Flowchart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .workflow {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .phase {
+            position: relative;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: #fafafa;
+        }
+        
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .phase-number {
+            background: #555;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .phase-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        
+        .step {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+            position: relative;
+        }
+        
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .step-description {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
+        .ai-role {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed #ccc;
+        }
+        
+        .ai-title {
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 5px;
+        }
+        
+        .ai-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .connector {
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .connector-line {
+            height: 20px;
+            width: 2px;
+            background: #999;
+            margin: 0 auto;
+        }
+        
+        .chatbot {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: #fafafa;
+        }
+        
+        .chatbot-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .chatbot-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .chatbot-feature {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .steps, .chatbot-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Civic Issue Reporting System</h1>
+            <p class="description">Complete workflow with AI integration and automation processes</p>
+        </header>
+        
+        <div class="workflow">
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">1</div>
+                    <h2 class="phase-title">Issue Reporting Phase</h2>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <h3 class="step-title">Citizen Reports Issue</h3>
+                        <p class="step-description">Citizen uses mobile app to submit issue with photo, description, category, and automatic location tagging.</p>
+                        
+                        <div class="ai-role">
+                            <div class="ai-title">AI Assistance</div>
+                            <p class="ai-description">AI suggests description based on image and text.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h3 class="step-title">Image Processing</h3>
+                        <p class="step-description">System processes uploaded image for clarity, relevance, and extracts metadata.</p>
+                        
+                        <div class="ai-role">
+                            <div class="ai-title">Vision AI</div>
+                            <p class="ai-description">Computer vision analyzes image to verify it shows a valid civic issue and detects severity.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h3 class="step-title">Location Validation</h3>
+                        <p class="step-description">System validates and pinpoints the exact location using GPS and map data.</p>
+                        
+                        <div class="ai-role">
+                            <div class="ai-title">Location Intelligence</div>
+                            <p class="ai-description">AI cross-references location with municipal boundaries to determine responsible department.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connector">
+                    <div class="connector-line"></div>
+                </div>
+            </div>
+            
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">2</div>
+                    <h2 class="phase-title">Processing & Routing Phase</h2>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <h3 class="step-title">Automated Triage</h3>
+                        <p class="step-description">System automatically categorizes and prioritizes issue based on content, location, and type.</p>
+                        
+                        <div class="ai-role">
+                            <div class="ai-title">AI Classification</div>
+                            <p class="ai-description">Machine learning model analyzes issue to determine priority level and appropriate department.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h3 class="step-title">Smart Routing</h3>
+                        <p class="step-description">Issue is automatically routed to the correct department based on AI determination.</p>
+                        
+                        <div class="ai-role">
+                            <div class="ai-title">Routing Engine</div>
+                            <p class="ai-description">AI considers department workload, expertise, and geographic responsibility for optimal routing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h3 class="step-title">Data Storage</h3>
+                        <p class="step-description">All issue data is stored in database with proper indexing for retrieval and analysis.</p>
+                        
+                        <div class="ai-role">
+                            <div class="ai-title">AI Enhancement</div>
+                            <p class="ai-description">AI generates metadata tags and embeddings for better search and retrieval later.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connector">
+                    <div class="connector-line"></div>
+                </div>
+            </div>
+            
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">3</div>
+                    <h2 class="phase-title">Administration & Resolution Phase</h2>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <h3 class="step-title">Department Dashboard</h3>
+                        <p class="step-description">Department staff access dashboard with prioritized list of assigned issues.</p>
+                        
+                        <div class="ai-role">
+                            <div class="ai-title">AI Prioritization</div>
+                            <p class="ai-description">AI continuously re-prioritizes issues based on changing conditions and new information.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h3 class="step-title">Task Management</h3>
+                        <p class="step-description">Staff assign issues to field workers, schedule tasks, and track progress.</p>
+                        
+                        <div class="ai-role">
+                            <div class="ai-title">AI Optimization</div>
+                            <p class="ai-description">AI suggests optimal assignment and scheduling based on worker skills, location, and current workload.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h3 class="step-title">Resolution Tracking</h3>
+                        <p class="step-description">System tracks issue resolution progress and updates status in real-time.</p>
+                        
+                        <div class="ai-role">
+                            <div class="ai-title">Predictive AI</div>
+                            <p class="ai-description">AI predicts resolution time based on issue complexity, historical data, and current workload.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connector">
+                    <div class="connector-line"></div>
+                </div>
+            </div>
+            
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">4</div>
+                    <h2 class="phase-title">Feedback & Analytics Phase</h2>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <h3 class="step-title">Notification System</h3>
+                        <p class="step-description">Citizens receive notifications at each stage: acknowledgment, assignment, progress, and resolution.</p>
+                        
+                        <div class="ai-role">
+                            <div class="ai-title">Smart Notifications</div>
+                            <p class="ai-description">AI personalizes notification content and timing based on user preferences and behavior.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h3 class="step-title">Performance Analytics</h3>
+                        <p class="step-description">System generates reports on response times, resolution rates, and department performance.</p>
+                        
+                        <div class="ai-role">
+                            <div class="ai-title">Predictive Analytics</div>
+                            <p class="ai-description">AI identifies trends, predicts future issue hotspots, and suggests resource allocation improvements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h3 class="step-title">Continuous Improvement</h3>
+                        <p class="step-description">System uses feedback and outcome data to improve AI models and processes.</p>
+                        
+                        <div class="ai-role">
+                            <div class="ai-title">Self-Learning System</div>
+                            <p class="ai-description">AI models continuously learn from new data, improving categorization, routing, and prediction accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chatbot">
+            <h2 class="chatbot-title">RAG-Based Chatbot System</h2>
+            <p>The AI-powered chatbot uses Retrieval Augmented Generation (RAG) to provide accurate, context-aware responses to citizen queries. It always asks to proceed to the next step after completing each interaction.</p>
+            
+            <div class="chatbot-features">
+                <div class="chatbot-feature">
+                    <h4>Knowledge Retrieval</h4>
+                    <p>Accesses municipal databases, regulations, and issue history to provide accurate information.</p>
+                </div>
+                <div class="chatbot-feature">
+                    <h4>Natural Conversations</h4>
+                    <p>Uses LLM for human-like interactions while grounding responses in official information.</p>
+                </div>
+                <div class="chatbot-feature">
+                    <h4>Process Automation</h4>
+                    <p>Can initiate issue reports, check status, and answer FAQs without human intervention.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
