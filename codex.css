@@ -46,6 +46,7 @@ header {
   background: linear-gradient(135deg, #2c3e50, #4a6491);
   color: white;
   padding: 15px;
+  justify-content: space-between;
   max-height: 80px;
   border-radius: 0 0 15px 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -342,3 +343,4 @@ textarea {
   color: #4a6491;
   text-decoration: none;
 }
+
